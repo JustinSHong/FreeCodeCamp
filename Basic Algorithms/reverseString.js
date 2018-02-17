@@ -5,11 +5,11 @@
 
 
 // use split, reverse, and join() methods
-// function reverseString(str) {
+function reverseString(str) {
 
-// 	var reversed = str.split('').reverse().join('');
-// 	return reversed;
-// }
+	var reversed = str.split('').reverse().join('');
+	return reversed;
+}
 
 // iterate from end of str and push to new string
 function reverseString(str) {
@@ -23,3 +23,5 @@ function reverseString(str) {
 }
 
 reverseString('hello');
+reverseString('Howdy');
+reverseString('Greetings from Earth');
