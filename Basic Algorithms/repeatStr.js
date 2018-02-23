@@ -13,6 +13,15 @@ function repeatStringNumTimes(str, num) {
 	return result;
 }
 
+// use repeat()
+function repeatStringNumTimes(str, num) {
+	if (num < 0) {
+		return '';
+	}
+
+	return str.repeat(num);
+}
+
 repeatStringNumTimes("*", 3); // "***"
 repeatStringNumTimes("abc", 3); // "abcabcabc"
 repeatStringNumTimes("abc", 4); // "abcabcabcabc"
