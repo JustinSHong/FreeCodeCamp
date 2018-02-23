@@ -22,6 +22,20 @@ function repeatStringNumTimes(str, num) {
 	return str.repeat(num);
 }
 
+function repeatStringNumTimes(str, num) {
+	var result = '';
+	
+	if (num < 0) {
+		return '';
+	}	
+	var count = num;
+	while(count > 0) {
+		result += str;
+		count--;
+	}
+	return result;
+}
+
 repeatStringNumTimes("*", 3); // "***"
 repeatStringNumTimes("abc", 3); // "abcabcabc"
 repeatStringNumTimes("abc", 4); // "abcabcabcabc"
