@@ -36,6 +36,14 @@ function repeatStringNumTimes(str, num) {
 	return result;
 }
 
+// use recursion
+function repeatStringNumTimes(str, num) {
+	if (num < 1) {
+		return '';
+	} 
+	return str + repeatStringNumTimes(str, num - 1);
+}
+
 repeatStringNumTimes("*", 3); // "***"
 repeatStringNumTimes("abc", 3); // "abcabcabc"
 repeatStringNumTimes("abc", 4); // "abcabcabcabc"
