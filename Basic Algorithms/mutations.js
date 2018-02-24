@@ -13,6 +13,21 @@ function mutation(arr) {
 	return true;
 }
 
+function mutation(arr) {
+	let first = arr[0].toLowerCase();
+	let second = arr[1].toLowerCase();
+	
+	let i = 0;
+	while (i < second.length) {
+
+		if (first.indexOf(second[i]) === -1) {
+			return false;
+		}
+		i++;
+	}
+	return true;
+}
+
 mutation(["hello", "hey"]); // false
 mutation(["hello", "Hello"]); // true
 mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]); // true
