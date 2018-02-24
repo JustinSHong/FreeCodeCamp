@@ -13,6 +13,18 @@ function bouncer(arr) {
 	return arr.filter(Boolean);
 }
 
+function bouncer(arr) {
+
+	var result = [];
+
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i]) {
+			result.push(arr[i]);
+		}
+	}
+	return result;
+}
+
 bouncer([7, "ate", "", false, 9]); // [7, "ate", 9]
 bouncer(["a", "b", "c"]); // ["a", "b", "c"]
 bouncer([false, null, 0, NaN, undefined, ""]); // []
