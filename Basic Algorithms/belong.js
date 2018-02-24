@@ -12,6 +12,21 @@ function getIndexToIns(arr, num) {
 	return sorted.indexOf(num);
 }
 
+function getIndexToIns(arr, num) {
+
+	arr.sort(function(a, b) {
+		return a - b;
+	});
+	
+	var count = 0;
+	for (let i = 0; i < arr.length; i++) {
+		if (num > arr[i]) {
+			count++;
+		}
+    }
+	return count;
+}
+
 getIndexToIns([10, 20, 30, 40, 50], 35); // 3
 getIndexToIns([10, 20, 30, 40, 50], 30); // 2
 getIndexToIns([40, 60], 50); // 1
