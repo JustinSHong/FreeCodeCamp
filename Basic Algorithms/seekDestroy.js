@@ -10,6 +10,14 @@ function destroyer(arr) {
 	});
 }
 
+function destroyer(arr) {
+	
+	var args = Array.prototype.slice.call(arguments);
+	return arr.filter(function(current) {
+		return !(args.includes(current));
+	});
+
+}
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3); // [1, 1]
 destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3); // [1, 5, 1]
