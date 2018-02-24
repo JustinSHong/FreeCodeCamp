@@ -19,6 +19,19 @@ function destroyer(arr) {
 
 }
 
+function destroyer(arr) {
+	
+	var args = Array.prototype.slice.call(arguments);
+	var result = [];
+	
+	for(let i = 0; i < arr.length; i++) {
+		if (args.indexOf(arr[i]) === - 1) {
+			result.push(arr[i]);
+		}
+	}
+	return result;
+}
+
 destroyer([1, 2, 3, 1, 2, 3], 2, 3); // [1, 1]
 destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3); // [1, 5, 1]
 destroyer([3, 5, 1, 2, 2], 2, 3, 5); // [1]
