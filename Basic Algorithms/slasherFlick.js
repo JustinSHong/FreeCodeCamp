@@ -6,6 +6,11 @@ function slasher(arr, num) {
 	return arr.slice(num);
 }
 
+function slasher(arr, num) {
+	var slashed = arr.splice(0, num);
+	return arr;
+}
+
 slasher([1, 2, 3], 2);  // [3]
 slasher([1, 2, 3], 0); // [1, 2, 3]
 slasher([1, 2, 3], 9); //  []
