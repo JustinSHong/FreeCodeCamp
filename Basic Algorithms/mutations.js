@@ -28,6 +28,21 @@ function mutation(arr) {
 	return true;
 }
 
+function mutation(arr) {
+	return arr[1].toLowerCase().split('').every(function(current) {
+		return arr[0].toLowerCase().indexOf(current) !== -1;
+	});
+}
+
+function mutation(arr) {
+
+	function isEqualTo(current) {
+		return arr[0].toLowerCase().indexOf(current) !== -1;
+	}
+
+	return arr[1].toLowerCase().split('').every(isEqualTo);
+}
+
 mutation(["hello", "hey"]); // false
 mutation(["hello", "Hello"]); // true
 mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]); // true
