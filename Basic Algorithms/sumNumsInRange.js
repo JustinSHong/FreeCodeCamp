@@ -5,16 +5,11 @@
 
 function sumAll(arr) {
 	let max = Math.max(arr[0], arr[1]);
-	let min = Math.min(arr[0], arr[1]);
-	let nums = [];	
-
-	for (let i = min ; i <= max; i++) {
-		nums.push(i);
-	}
+	let min = Math.min(arr[0], arr[1]);	
 
 	let sum = 0;
-	for (let j = 0; j < nums.length; j++) {
-		sum += nums[j];
+	for (let i = min; i <= max; i++) {
+		sum += i;
 	}
 	return sum;
 }
