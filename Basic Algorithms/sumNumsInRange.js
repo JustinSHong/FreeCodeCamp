@@ -19,6 +19,19 @@ function sumAll(arr) {
 	return sum;
 }
 
+function sumAll(arr) {
+	let max = Math.max(arr[0], arr[1]);
+	let min = Math.min(arr[0], arr[1]);
+	let nums = [];
+
+	for (let i = min; i <= max; i++) {
+		nums.push(i);
+	}
+	return nums.reduce(function(a, b) {
+		return a + b;
+	});
+}
+
 sumAll([1, 4]); // 10
 sumAll([4, 1]); // 10
 sumAll([5, 10]); // 45
