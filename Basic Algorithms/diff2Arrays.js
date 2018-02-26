@@ -35,6 +35,15 @@ function diffArray(arr1, arr2) {
 	return result;
 }
 
+function diffArray(arr1, arr2) {
+	
+	let arr3 = [...arr1,...arr2];
+	// console.log('arr3 ' + arr3);
+	return arr3.filter(function(el) {
+		return arr3.indexOf(el) === arr3.lastIndexOf(el);
+	});
+}
+
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); // [4] pass
 diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
 // ["pink wool"] pass
