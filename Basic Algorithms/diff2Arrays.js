@@ -44,6 +44,25 @@ function diffArray(arr1, arr2) {
 	});
 }
 
+function diffArray(arr1, arr2) {
+	let result = [];
+
+	function findUniqueEl(arr1, arr2) {
+		for (let i = 0; i < arr1.length; i++) {
+			if (arr2.indexOf(arr1[i]) === -1) {
+				result.push(arr1[i]);
+			}
+		}
+		return result;
+	}
+	// test elements from arr1 in arr2
+	findUniqueEl(arr1, arr2);
+	// test elements from arr2 in arr1
+	findUniqueEl(arr2, arr1);
+
+	return result;
+}
+
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); // [4] pass
 diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
 // ["pink wool"] pass
