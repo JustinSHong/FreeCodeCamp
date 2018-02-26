@@ -45,6 +45,12 @@ function diffArray(arr1, arr2) {
 }
 
 function diffArray(arr1, arr2) {
+	return [...arr1,...arr2].filter(function(el) {
+		return (!arr1.includes(el)) || (!arr2.includes(el));
+	});
+}
+
+function diffArray(arr1, arr2) {
 	let result = [];
 
 	function findUniqueEl(arr1, arr2) {
