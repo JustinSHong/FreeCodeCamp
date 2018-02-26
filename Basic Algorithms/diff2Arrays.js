@@ -21,7 +21,19 @@ function diffArray(arr1, arr2) {
 	return result;
 }
 
-
+function diffArray(arr1, arr2) {
+	let result = [];
+	let arr3 = arr1.concat(arr2).sort();
+// 	let arr3 = [...arr1,...arr2];
+	
+	for (let i = 0; i < arr3.length; i++) {
+		if (arr3[i] !== arr3[i + 1] &&
+			arr3[i] !== arr3[i - 1]) {
+			result.push(arr3[i]);
+		}
+	}
+	return result;
+}
 
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); // [4] pass
 diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
