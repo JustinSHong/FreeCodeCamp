@@ -32,6 +32,13 @@ function myReplace(str, before, after) {
 	return str.replace(before, capitalize);	
 }
 
+function myReplace(str, before, after) {
+	if (/[A-Z]/.test(before)) {
+		after = after[0].toUpperCase() + after.slice(1);
+	}
+	return str.replace(before, after);
+}
+
 myReplace("Let us go to the store", "store", "mall"); // "Let us go to the mall" 
 myReplace("He is Sleeping on the couch", "Sleeping", "sitting"); // "He is Sitting on the couch"
 myReplace("This has a spellngi error", "spellngi", "spelling"); // "This has a spelling error"
