@@ -20,6 +20,18 @@ function myReplace(str, before, after) {
 	return words.join(' '); 
 }
 
+function myReplace(str, before, after) {
+	function capitalize() {
+		if (before.charCodeAt(0) > 64 &&
+			before.charCodeAt(0) < 91) {
+			after = after[0].toUpperCase() + after.slice(1); 
+		}
+		return after;
+	}
+
+	return str.replace(before, capitalize);	
+}
+
 myReplace("Let us go to the store", "store", "mall"); // "Let us go to the mall" 
 myReplace("He is Sleeping on the couch", "Sleeping", "sitting"); // "He is Sitting on the couch"
 myReplace("This has a spellngi error", "spellngi", "spelling"); // "This has a spelling error"
