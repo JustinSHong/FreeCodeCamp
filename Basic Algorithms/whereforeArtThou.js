@@ -26,6 +26,20 @@ function whatIsInAName(collection, source) {
 	return arr;
 }
 
+function whatIsInAName(collection, source) {
+
+	let srcKeys = Object.keys(source);
+
+	return collection.filter(function(obj) {
+		for (let key of srcKeys) {
+            if (!(key in obj) || (obj[key] !== source[key])) {
+                return false;
+            }
+        }
+		return true;
+	});
+}
+
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 // [{ first: "Tybalt", last: "Capulet" }]
 whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 });
