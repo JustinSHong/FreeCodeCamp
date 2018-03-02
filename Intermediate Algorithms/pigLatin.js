@@ -43,6 +43,19 @@ function translatePigLatin(str) {
 	return str;
 }
 
+function translatePigLatin(str) {
+	let vowels = /[aeiou]/g;
+
+	if (str[0].match(vowels)) {
+		return str + "way"; 
+	} else {
+		let index = str.indexOf(str.match(vowels)[0]);
+		
+		str = str.substr(index) + str.substr(0, index) + "ay";
+		return str;
+	}
+}
+
 translatePigLatin("california"); // "aliforniacay"
 translatePigLatin("paragraphs"); // "aragraphspay"
 translatePigLatin("glove"); // "oveglay" 
