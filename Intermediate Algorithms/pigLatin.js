@@ -56,6 +56,24 @@ function translatePigLatin(str) {
 	}
 }
 
+function translatePigLatin(str) {
+	let vowels = ['a','e','i','o','u'];
+
+	// check if each letter is a vowel or consonant
+	// returns corresponding index
+	function checkForVowel(index) {
+		if (vowels.indexOf(str[index]) === -1) {
+			return checkForVowel(index + 1);
+		} 
+		return index;
+	}
+
+	if (checkForVowel(0) === 0) {
+		return str + "way";
+	}
+	return str.substr(checkForVowel(0)) + str.substr(0, checkForVowel(0)) + "ay";	
+}
+
 translatePigLatin("california"); // "aliforniacay"
 translatePigLatin("paragraphs"); // "aragraphspay"
 translatePigLatin("glove"); // "oveglay" 
