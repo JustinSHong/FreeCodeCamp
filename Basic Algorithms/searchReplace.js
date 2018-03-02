@@ -39,6 +39,18 @@ function myReplace(str, before, after) {
 	return str.replace(before, after);
 }
 
+function myReplace(str, before, after) {
+	return str.split(' ').map(function(el) {
+		if (el === before) {
+			if (before[0] === before[0].toUpperCase()) {
+				after = after[0].toUpperCase() + after.slice(1);
+			}
+			return after;
+		}
+		return el;
+	}).join(' ');
+}
+
 myReplace("Let us go to the store", "store", "mall"); // "Let us go to the mall" 
 myReplace("He is Sleeping on the couch", "Sleeping", "sitting"); // "He is Sitting on the couch"
 myReplace("This has a spellngi error", "spellngi", "spelling"); // "This has a spelling error"
