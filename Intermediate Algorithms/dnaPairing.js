@@ -31,6 +31,20 @@ function pairElement(str) {
 	return dna;
 }
 
+function pairElement(str) {
+	return str.split('').map(function(el) {
+		let pair = [];
+		pair.push(el);		
+
+  		el === "G" ? pair.push("C")
+		: el === "C" ? pair.push("G")
+		: el === "A" ? pair.push("T")
+		: pair.push("A")
+
+		return pair;
+	});
+}
+
 pairElement("ATCGA"); 
 // [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
 pairElement("TTGAG"); 
