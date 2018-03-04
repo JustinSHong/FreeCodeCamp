@@ -18,6 +18,22 @@ function fearNotLetter(str) {
 	return undefined;
 }
 
+function fearNotLetter(str) {
+	let strCode = str.charCodeAt(0);
+	let missing;
+
+	let mapped =  str.split('').map(function(char) {
+
+		if (char.charCodeAt(0) === strCode) {
+			strCode++;
+		} else {
+			missing = String.fromCharCode(strCode);
+        }
+	});
+
+	return missing;
+}
+
 fearNotLetter("abce"); // "d"
 fearNotLetter("abcdefghjklmno"); // "i"
 fearNotLetter("bcd"); // undefined
