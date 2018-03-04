@@ -45,6 +45,22 @@ function pairElement(str) {
 	});
 }
 
+function pairElement(str) {
+	var basePairs = {
+		A : "T",
+		T : "A",
+		G : "C",
+		C : "G"		
+	};
+	
+	let dna = [];
+	
+	for (let i = 0; i < str.length; i++) {
+		dna[i] = [str[i], basePairs[str[i]]];
+	}
+	return dna;
+}
+
 pairElement("ATCGA"); 
 // [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
 pairElement("TTGAG"); 
