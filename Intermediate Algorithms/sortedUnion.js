@@ -24,6 +24,21 @@ function uniteUnique(arr) {
 	return result;
 }
 
+function uniteUnique(arr) {
+	let flattened = Array.from(arguments).reduce(function(a, b) {
+		return a.concat(b);
+	})
+	
+	let result = [];
+	flattened.forEach(function(el) {
+        while (flattened.lastIndexOf(el) !== flattened.indexOf(el)) {
+            flattened.splice(flattened.lastIndexOf(el), 1);
+        }
+       	result.push(el); 
+	});
+	return result;
+}
+
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 // [1, 3, 2, 5, 4]
 uniteUnique([1, 3, 2], [1, [5]], [2, [4]]); 
