@@ -39,6 +39,14 @@ function uniteUnique(arr) {
 	return result;
 }
 
+function uniteUnique(...arr) {
+	return arr.reduce(function(a, b) {
+		return a.concat(b.filter(function(el) {
+			return a.indexOf(el) === -1;
+		}));
+	});
+}
+
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 // [1, 3, 2, 5, 4]
 uniteUnique([1, 3, 2], [1, [5]], [2, [4]]); 
