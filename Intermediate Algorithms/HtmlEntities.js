@@ -39,6 +39,18 @@ function convertHTML(str) {
 	}).join('');
 }
 
+function convertHTML(str) {
+	let entities = ["&amp;", "&lt;", "&gt;", "&quot;", "&apos;"];
+	let match = ["&", "<", ">", '"', "'"];
+
+	for (let char of str) {
+		if (match.indexOf(char) !== -1) {
+			str = str.replace(char, entities[match.indexOf(char)]);
+		}
+	}
+	return str;
+}
+
 convertHTML("Dolce & Gabbana");
 // Dolce &​amp; Gabbana
 convertHTML("Hamburgers < Pizza < Tacos");
