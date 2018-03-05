@@ -54,6 +54,12 @@ function flatten(arr) {
 	});
 }
 
+function flatten(...arr) {
+	return arr.reduce(function(a, b) {
+		return a.concat(b);
+	});
+}
+
 function uniteUnique(arr) {
 	let result = [];
 	for (el of arr) {
