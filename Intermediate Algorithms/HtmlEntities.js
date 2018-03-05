@@ -25,6 +25,20 @@
 	return str;
 }
 
+function convertHTML(str) {
+	let entities = {
+		"&" : "&amp;",
+		"<" : "&lt;",
+		">" : "&gt;",
+		'"' : "&quot;",
+		"'" : "&apos;"
+	};
+
+	return str.split('').map(function(char) {
+		return (char in entities) ?  entities[char] : char;
+	}).join('');
+}
+
 convertHTML("Dolce & Gabbana");
 // Dolce &​amp; Gabbana
 convertHTML("Hamburgers < Pizza < Tacos");
