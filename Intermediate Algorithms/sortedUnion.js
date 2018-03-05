@@ -47,3 +47,29 @@ uniteUnique([1, 2, 3], [5, 2, 1]);
 // [1, 2, 3, 5]
 uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
 // [1, 2, 3, 5, 4, 6, 7, 8]
+
+function flatten(arr) {
+	return Array.prototype.reduce.call(arguments, function(a, b) {
+		return a.concat(b);
+	});
+}
+
+function uniteUnique(arr) {
+	let result = [];
+	for (el of arr) {
+		while (arr.indexOf(el) !== arr.lastIndexOf(el)) {
+			arr.splice(arr.lastIndexOf(el), 1);
+        }
+		result.push(el);
+	}
+	return result;
+}
+
+uniteUnique(flatten([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+// [1, 3, 2, 5, 4]
+uniteUnique(flatten([1, 3, 2], [1, [5]], [2, [4]])); 
+// [1, 3, 2, [5], [4]]
+uniteUnique(flatten([1, 2, 3], [5, 2, 1]));
+// [1, 2, 3, 5]
+uniteUnique(flatten([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]));
+// [1, 2, 3, 5, 4, 6, 7, 8]
