@@ -43,6 +43,24 @@ function sumFibs(num) {
 	return sum;
 }
 
+function sumFibs(num) {
+	let fibNums = [1, 1, 2, 3, 5, 8];
+	let sum = 0;
+
+	let index = 0;
+	let i = 5;
+	while (fibNums[i] <= num) {
+		i++;
+		fibNums[i] = fibNums[i - 1] + fibNums[i - 2];
+	}
+	
+	return fibNums.filter(function(n) {
+		return n % 2 === 1 && n <= num;
+	}).reduce(function(a, b) {
+		return a + b;
+	});
+}
+
 sumFibs(1); // 1 
 sumFibs(1000); // 1785
 sumFibs(4000000); // 4613732
