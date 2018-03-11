@@ -23,6 +23,26 @@ function sumFibs(num) {
 	return sum;
 }
 
+function sumFibs(num) {
+	let fibNums = [1, 1, 2, 3, 5, 8];
+	let sum = 0;
+
+	let index = 0;
+	let i = 5;
+	while (fibNums[index] <= num) {
+		// add more fibonnaci nums
+		i++;
+		fibNums[i] = fibNums[i - 1] + fibNums[i - 2];
+
+		// add all odd fibNums to sum
+		if (fibNums[index] % 2 === 1) {
+			sum += fibNums[index];
+		}
+		index++;
+	}
+	return sum;
+}
+
 sumFibs(1); // 1 
 sumFibs(1000); // 1785
 sumFibs(4000000); // 4613732
