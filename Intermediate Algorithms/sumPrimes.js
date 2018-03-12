@@ -1,10 +1,9 @@
 // Sum all the prime numbers up to and including the provided number.
-
 // A prime number is defined as a number greater than one and having only two divisors, one and itself.
 // For example, 2 is a prime number because it's only divisible by one and two.
-
 // The provided number may not be a prime.
 
+// brute force
 function sumPrimes(num) {
 	let primes = [2, 3];
 
@@ -38,6 +37,7 @@ function sumPrimes(num) {
 	});
 }
 
+// use Sieve of Erartosthenes algorithm
 function sumPrimes(num) {
 	// holds all integers from 2 to num
 	let integers = [];
@@ -71,6 +71,7 @@ function sumPrimes(num) {
 	return sum;
 }
 
+// use Trial Division algorithm
 function sumPrimes(num) {
 	// holds all primes from 2 to num
 	let primes = [];
