@@ -38,5 +38,38 @@ function sumPrimes(num) {
 	});
 }
 
+function sumPrimes(num) {
+	// holds all integers from 2 to num
+	let integers = [];
+	// marks integers in A as prime or composite
+		// true means an integer is a prime
+		// false means an integer is a composite
+	let sieve = [];
+	let sum = 0;
+
+	// mark all integers from 2 to num as true initially
+	for (let i = 2; i <= num; i++) {
+		integers.push(i);
+		sieve.push(Boolean(i));
+    }
+	
+	// mark multiples of prime numbers as false
+	for (let j = 0; j <= integers.length; j++) {
+		if (sieve[j]) {
+			for (let k = Math.pow(integers[j], 2); k <= num; k += integers[j]) {
+				sieve[integers.indexOf(k)] = false;
+			}
+		}
+	}
+	
+	// add primes numbers together
+	for (let num of integers) {
+		if (sieve[integers.indexOf(num)]) {
+			sum += num;
+		}
+	}
+	return sum;
+}
+
 sumPrimes(10); // 17
 sumPrimes(977); // 73156
