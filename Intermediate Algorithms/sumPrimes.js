@@ -71,5 +71,30 @@ function sumPrimes(num) {
 	return sum;
 }
 
+function sumPrimes(num) {
+	// holds all primes from 2 to num
+	let primes = [];
+	let sum = 0;
+	
+	// iterate from 2 to num
+	for (let i = 2; i <= num; i++) {
+		let count = 0; // counts how many nums i is divisible by
+		for (let j = 1; j <= Math.floor(Math.sqrt(i)); j++) {
+			if (i % j === 0 && j != 1) {
+				count++;
+				continue;
+			}
+		}
+		// if no divisor of i is found after checking up to sqrt of i
+		// i must be a prime
+		if (count === 0) {
+			primes.push(i);
+			sum += i;
+		}
+	}
+	console.log(`all prime numbers less than ${num}: ` + primes);
+	return sum;
+}
+
 sumPrimes(10); // 17
 sumPrimes(977); // 73156
