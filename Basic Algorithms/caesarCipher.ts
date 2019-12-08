@@ -8,7 +8,7 @@
 
 // All letters will be uppercase. Do not transform any non-alphabetic character but do pass them on.
 
-const rot13 = (str: string): string => {
+export const rot13 = (str: string): string => {
 	let result = ''
 
 	for (let i = 0; i < str.length; i++) {
