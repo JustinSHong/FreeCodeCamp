@@ -1,47 +1,51 @@
 {
-    "name": "FreeCodeCamp",
-    "version": "1.0.0",
-    "description": "Free Code Camp",
-    "main": "index.js",
-    "scripts": {
-        "format": "prettier --ignore-path ./.gitignore --write",
-        "test": "jest --verbose",
-        "test-watch": "jest --watch --verbose"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/JustinSHong/FreeCodeCamp.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/JustinSHong/FreeCodeCamp/issues"
-    },
-    "homepage": "https://github.com/JustinSHong/FreeCodeCamp#readme",
-    "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^2.10.0",
-        "@typescript-eslint/parser": "^2.10.0",
-        "eslint": "^6.7.2",
-        "husky": ">=1",
-        "jest": "^24.9.0",
-        "lint-staged": ">=8",
-        "prettier": "^1.19.1",
-        "typescript": "^3.7.3"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged",
-            "pre-push": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "*.js": [
-            "yarn run format",
-            "eslint --fix",
-            "test",
-            "git add"
-        ]
-    },
-    "dependencies": {}
+  "name": "FreeCodeCamp",
+  "version": "1.0.0",
+  "description": "Free Code Camp",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --ignore-path ./.gitignore --write",
+    "test": "jest --verbose",
+    "test-watch": "jest --watch --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinSHong/FreeCodeCamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinSHong/FreeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/JustinSHong/FreeCodeCamp#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2",
+    "husky": ">=1",
+    "jest": "^24.9.0",
+    "lint-staged": ">=8",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{json}": [
+      "yarn run format",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "yarn run format",
+      "eslint --fix",
+      "test",
+      "git add"
+    ]
+  },
+  "dependencies": {}
 }
