@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/JustinSHong/FreeCodeCamp#readme",
   "devDependencies": {
+    "@types/jest": "^24.0.23",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "eslint": "^6.7.2",
@@ -28,12 +29,13 @@
     "jest": "^24.9.0",
     "lint-staged": ">=8",
     "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.3"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run format"
+      "pre-push": "lint-staged"
     }
   },
   "lint-staged": {
@@ -44,6 +46,7 @@
     "*.{ts,tsx}": [
       "yarn run format",
       "eslint --fix",
+      "yarn run test",
       "git add"
     ]
   },
