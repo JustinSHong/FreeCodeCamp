@@ -45,7 +45,15 @@ describe('Returns the lowest index where a value should be inserted into an arra
 		expect(Array.isArray(testCases.seven.array)).toBe(true)
 	})
 
-	it('should take a number as an argument', () => {})
+	it('should take a number as an argument', () => {
+		expect(typeof testCases.one.target).toBe('number')
+		expect(typeof testCases.two.target).toBe('number')
+		expect(typeof testCases.three.target).toBe('number')
+		expect(typeof testCases.four.target).toBe('number')
+		expect(typeof testCases.five.target).toBe('number')
+		expect(typeof testCases.six.target).toBe('number')
+		expect(typeof testCases.seven.target).toBe('number')
+	})
 
 	it('should return the index of the given value', () => {})
 })
