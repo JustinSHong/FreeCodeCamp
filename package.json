@@ -4,6 +4,7 @@
   "description": "Free Code Camp",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --ignore-path ./.gitignore --write",
     "test": "jest"
   },
   "repository": {
@@ -29,12 +30,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
-      "prettier --write",
+      "yarn run format",
       "git add"
     ],
     "*.js": [
