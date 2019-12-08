@@ -4,7 +4,7 @@
   "description": "Free Code Camp",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --ignore-path ./.gitignore --write",
+    "format": "prettier --ignore-path ./.gitignore --write **/*.ts",
     "test": "jest --verbose",
     "test-watch": "jest --watch --verbose",
     "ts-watch": "tsc -w"
@@ -33,7 +33,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm format"
+      "pre-push": "lint-staged"
     }
   },
   "lint-staged": {
