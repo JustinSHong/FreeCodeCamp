@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --ignore-path ./.gitignore --write **/*.ts",
+    "eslint": "eslint --fix ./**/.ts --quiet",
     "test": "jest --verbose",
     "test-watch": "jest --watch --verbose",
     "ts-watch": "tsc -w"
@@ -35,7 +36,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run format && eslint --fix --quiet && yarn run test"
+      "pre-push": "yarn run format && yarn run eslint && yarn run test"
     }
   },
   "lint-staged": {
@@ -45,7 +46,7 @@
     ],
     "*.{ts,tsx}": [
       "yarn run format",
-      "eslint --fix",
+      "yarn run eslint",
       "yarn run test",
       "git add"
     ]
