@@ -8,24 +8,24 @@
 
 // All letters will be uppercase. Do not transform any non-alphabetic character but do pass them on.
 
-function rot13(str) {
-	var result = '';
-	
+const rot13 = (str: string): string => {
+	let result = ''
+
 	for (let i = 0; i < str.length; i++) {
 		if (str.charCodeAt(i) < 78) {
 			if (str.charCodeAt(i) < 65) {
-				result += str[i];
+				result += str[i]
 			} else {
-				result += String.fromCharCode(str.charCodeAt(i) + 13);
+				result += String.fromCharCode(str.charCodeAt(i) + 13)
 			}
 		} else {
-			result += String.fromCharCode(str.charCodeAt(i) - 13);
+			result += String.fromCharCode(str.charCodeAt(i) - 13)
 		}
 	}
-	return result;
+	return result
 }
 
-rot13("SERR PBQR PNZC"); // "FREE CODE CAMP"
-rot13("SERR CVMMN!"); // "FREE PIZZA!"
-rot13("SERR YBIR?"); // "FREE LOVE?"
-rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK."); // "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX." 
+rot13('SERR PBQR PNZC') // "FREE CODE CAMP"
+rot13('SERR CVMMN!') // "FREE PIZZA!"
+rot13('SERR YBIR?') // "FREE LOVE?"
+rot13('GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.') // "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX."
