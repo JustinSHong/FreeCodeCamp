@@ -6,7 +6,8 @@
   "scripts": {
     "format": "prettier --ignore-path ./.gitignore --write",
     "test": "jest --verbose",
-    "test-watch": "jest --watch --verbose"
+    "test-watch": "jest --watch --verbose",
+    "ts-watch": "tsc -w"
   },
   "repository": {
     "type": "git",
