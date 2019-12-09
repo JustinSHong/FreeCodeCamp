@@ -64,19 +64,14 @@ module.exports = {
     // maxWorkers: "50%",
 
     // An array of directory names to be searched recursively up from the requiring module's location
-    // moduleDirectories: [
-    //   "node_modules"
-    // ],
+    moduleDirectories: [
+        "node_modules",
+        "Basic Algorithms",
+        "Intermediate Algorithms"
+    ],
 
     // An array of file extensions your modules use
-    // moduleFileExtensions: [
-    //   "js",
-    //   "json",
-    //   "jsx",
-    //   "ts",
-    //   "tsx",
-    //   "node"
-    // ],
+    moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "node"],
 
     // A map from regular expressions to module names that allow to stub out resources with a single module
     // moduleNameMapper: {},
@@ -142,7 +137,7 @@ module.exports = {
 
     // The glob patterns Jest uses to detect test files
     testMatch: [
-        "**/__tests__/**/*.[jt]s?(x)",
+        "**/__tests__/**/*.[tj]s?(x)",
         "**/?(*.)+(spec|test).[tj]s?(x)"
     ],
 
