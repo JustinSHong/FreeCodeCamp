@@ -1,8 +1,8 @@
-// import {
-// 	palindrome,
-// 	palindrome2,
-// 	palindrome3
-// } from '../Basic Algorithms/checkPalindromes'
+import {
+	palindrome,
+	palindrome2,
+	palindrome3
+} from '../Basic Algorithms/checkPalindromes'
 
 describe('Determines if the given input string is a palindrome', () => {
 	const testCases = [
@@ -23,6 +23,12 @@ describe('Determines if the given input string is a palindrome', () => {
 	describe.each([testCases])('takes a string as input', a => {
 		it('should take a string as input', () => {
 			expect(typeof a).toBe('string')
+		})
+
+		it('should return a boolean as output', () => {
+			expect(typeof palindrome(a)).toBe('boolean')
+			expect(typeof palindrome2(a)).toBe('boolean')
+			expect(typeof palindrome3(a)).toBe('boolean')
 		})
 	})
 })
