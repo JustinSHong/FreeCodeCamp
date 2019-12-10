@@ -1,4 +1,4 @@
-import { rot13 } from '../Basic Algorithms/caesarCipher'
+import { rot13 } from '../BasicAlgorithms/caesarCipher'
 
 describe('Decypts the ROT13 cipher and returns the decoded string', () => {
 	const testCases = [

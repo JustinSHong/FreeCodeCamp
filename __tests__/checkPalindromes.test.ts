@@ -2,7 +2,7 @@ import {
 	palindrome,
 	palindrome2,
 	palindrome3
-} from '../Basic Algorithms/checkPalindromes'
+} from '../BasicAlgorithms/checkPalindromes'
 
 describe('Determines if the given input string is a palindrome', () => {
 	const testCases = [

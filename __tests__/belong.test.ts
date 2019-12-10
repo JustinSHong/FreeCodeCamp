@@ -1,4 +1,4 @@
-import { getIndexToIns, getIndexToIns2 } from '../Basic Algorithms/belong'
+import { getIndexToIns, getIndexToIns2 } from '../BasicAlgorithms/belong'
 
 describe('Returns the lowest index where a value should be inserted into an array once sorted', () => {
 	const testCases = {
