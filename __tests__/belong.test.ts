@@ -1,4 +1,4 @@
-// import { getIndexToIns, getIndexToIns2 } from "../BasicAlgorithms/belong";
+import { getIndexToIns, getIndexToIns2 } from '../BasicAlgorithms/belong'
 
 describe('Returns the lowest index where a value should be inserted into an array once sorted', () => {
 	const testCases = [
@@ -14,12 +14,15 @@ describe('Returns the lowest index where a value should be inserted into an arra
 	describe.each(testCases)(
 		'returns index where a value should be inserted',
 		(a, b, expected) => {
-			it(`it should take ${a} and ${b} and return ${expected}`, () => {})
 			it('should take an array of numbers as an argument', () => {
 				expect(Array.isArray(a)).toBe(true)
 			})
 			it('should take a number as an argument', () => {
 				expect(typeof b).toBe('number')
+			})
+			it(`it should take ${a} and ${b} and return ${expected}`, () => {
+				expect(getIndexToIns(a as number[], b as number)).toBe(expected)
+				expect(getIndexToIns2(a as number[], b as number)).toBe(expected)
 			})
 		}
 	)
