@@ -18,6 +18,9 @@ describe('Returns the lowest index where a value should be inserted into an arra
 			it('should take an array of numbers as an argument', () => {
 				expect(Array.isArray(a)).toBe(true)
 			})
+			it('should take a number as an argument', () => {
+				expect(typeof b).toBe('number')
+			})
 		}
 	)
 })
