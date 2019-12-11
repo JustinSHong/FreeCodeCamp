@@ -15,6 +15,9 @@ describe('Returns the lowest index where a value should be inserted into an arra
 		'returns index where a value should be inserted',
 		(a, b, expected) => {
 			it(`it should take ${a} and ${b} and return ${expected}`, () => {})
+			it('should take an array of numbers as an argument', () => {
+				expect(Array.isArray(a)).toBe(true)
+			})
 		}
 	)
 })
