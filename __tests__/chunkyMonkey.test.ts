@@ -1,7 +1,7 @@
-// import {
-// 	chunkArrayInGroups,
-// 	chunkArrayInGroups2
-// } from '../BasicAlgorithms/chunkyMonkey'
+import {
+	chunkArrayInGroups,
+	chunkArrayInGroups2
+} from '../BasicAlgorithms/chunkyMonkey'
 
 describe('Splits an array in to groups the length of size and returns them as a 2D array', () => {
 	// prettier-ignore
@@ -15,13 +15,21 @@ describe('Splits an array in to groups the length of size and returns them as a 
 		[[0, 1, 2, 3, 4, 5, 6, 7, 8], 2, [[0, 1], [2, 3], [4, 5], [6, 7], [8]]]
 	]
 
-	describe.each([testCases])('takes an array and a number as input', a => {
-		it('should take an array as an argument', () => {
-			expect(Array.isArray(a[0])).toBe(true)
-		})
+	describe.each<any>(testCases)(
+		'takes an array and a number as input',
+		(a, b, expected) => {
+			it('should take an array as an argument', () => {
+				expect(Array.isArray(a)).toBe(true)
+			})
 
-		it('should take a number as an argument', () => {
-			expect(typeof a[1]).toBe('number')
-		})
-	})
+			it('should take a number as an argument', () => {
+				expect(typeof b).toBe('number')
+			})
+
+			it(`should take ${a} and ${b} and return ${expected}`, () => {
+				expect(chunkArrayInGroups(a, b)).toEqual(expected)
+				expect(chunkArrayInGroups2(a, b)).toEqual(expected)
+			})
+		}
+	)
 })
