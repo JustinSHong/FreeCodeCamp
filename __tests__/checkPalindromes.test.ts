@@ -20,14 +20,14 @@ describe('Determines if the given input string is a palindrome', () => {
 		['five|_/|four', false]
 	]
 
-	describe.each(testCases)('takes a string as input', (a, b) => {
+	describe.each<any>(testCases)('takes a string as input', (a, b) => {
 		it('should take a string as input', () => {
 			expect(typeof a).toBe('string')
 		})
 
-		const result = palindrome(a as string)
-		const result2 = palindrome2(a as string)
-		const result3 = palindrome3(a as string)
+		const result = palindrome(a)
+		const result2 = palindrome2(a)
+		const result3 = palindrome3(a)
 
 		it('should return a boolean as output', () => {
 			expect(typeof result).toBe(typeof b)
