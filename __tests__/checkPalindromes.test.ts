@@ -31,8 +31,8 @@ describe('Determines if the given input string is a palindrome', () => {
 
 		it('should return a boolean as output', () => {
 			expect(typeof result).toBe(typeof b)
-			expect(typeof result2).toBe('boolean')
-			expect(typeof result3).toBe('boolean')
+			expect(typeof result2).toBe(typeof b)
+			expect(typeof result3).toBe(typeof b)
 		})
 
 		it(`takes ${a} and returns ${b}`, () => {
