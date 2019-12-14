@@ -4,7 +4,7 @@
   "description": "Free Code Camp",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --ignore-path ./.gitignore --write **/*.{test.ts,ts}",
+    "format": "prettier --ignore-path ./.gitignore --write **/*.{ts}",
     "eslint": "eslint --fix ./**/*.ts --quiet",
     "test": "jest --verbose",
     "test-watch": "jest --watch --verbose",
