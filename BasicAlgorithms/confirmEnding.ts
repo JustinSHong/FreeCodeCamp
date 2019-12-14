@@ -5,24 +5,24 @@
 // one of the JavaScript substring methods instead.
 
 // use str.endsWith()
-const confirmEnding = (str: string, target: string): boolean => {
+export const confirmEnding = (str: string, target: string): boolean => {
     return str.endsWith(target)
 }
 
 // use str.substr()
-const confirmEnding2 = (str: string, target: string): boolean => {
+export const confirmEnding2 = (str: string, target: string): boolean => {
     const subStr = str.substr(-target.length)
     return subStr === target
 }
 
 // use str.substring()
-const confirmEnding3 = (str: string, target: string): boolean => {
+export const confirmEnding3 = (str: string, target: string): boolean => {
     const subStr = str.substring(str.length, str.length - target.length)
     return subStr === target
 }
 
 // use slice()
-const confirmEnding4 = (str: string, target: string): boolean => {
+export const confirmEnding4 = (str: string, target: string): boolean => {
     const subStr = str.slice(-target.length)
     return subStr === target
 }
