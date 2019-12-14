@@ -24,7 +24,7 @@ describe('it should return a boolean describing if a string ends with a given su
 
 	describe.each(testCases)(
 		'checks if a string ends with a target substr',
-		(a, b) => {
+		(a, b, expected) => {
 			it('should take 2 strings as input', () => {
 				expect(typeof a).toBe('string')
 				expect(typeof b).toBe('string')
@@ -33,6 +33,11 @@ describe('it should return a boolean describing if a string ends with a given su
 				expect(typeof confirmEnding(a as string, b as string)).toBe('boolean')
 				expect(typeof confirmEnding2(a as string, b as string)).toBe('boolean')
 				expect(typeof confirmEnding3(a as string, b as string)).toBe('boolean')
+			})
+			it(`should take ${a} and ${b} and return ${expected}`, () => {
+				expect(confirmEnding(a as string, b as string)).toBe(expected)
+				expect(confirmEnding2(a as string, b as string)).toBe(expected)
+				expect(confirmEnding3(a as string, b as string)).toBe(expected)
 			})
 		}
 	)
