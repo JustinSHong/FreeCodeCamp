@@ -1,8 +1,8 @@
-// import {
-//     confirmEnding,
-//     confirmEnding2,
-//     confirmEnding3
-// } from '../BasicAlgorithms/confirmEnding'
+import {
+	confirmEnding,
+	confirmEnding2,
+	confirmEnding3
+} from '../BasicAlgorithms/confirmEnding'
 
 describe('it should return a boolean describing if a string ends with a given substring', () => {
 	const testCases = [
@@ -28,6 +28,11 @@ describe('it should return a boolean describing if a string ends with a given su
 			it('should take 2 strings as input', () => {
 				expect(typeof a).toBe('string')
 				expect(typeof b).toBe('string')
+			})
+			it('should return a bool as output', () => {
+				expect(typeof confirmEnding(a as string, b as string)).toBe('boolean')
+				expect(typeof confirmEnding2(a as string, b as string)).toBe('boolean')
+				expect(typeof confirmEnding3(a as string, b as string)).toBe('boolean')
 			})
 		}
 	)
