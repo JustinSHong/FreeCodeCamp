@@ -5,14 +5,19 @@
 
 export const frankenSplice = (
 	arrToCopy: any[],
-	target: any[],
+	target: string[] | number[],
 	idx: number
 ): any[] => {
-	let result = target.slice()
-	result.splice(idx, 0, ...arrToCopy)
-	return result
+	const length = arrToCopy.length
+	let targetCopy = target.slice()
+
+	for (let i = 0; i < length; i++) {
+		targetCopy.splice(idx + i, 0, arrToCopy[i])
+	}
+
+	return targetCopy
 }
 
-frankenSplice([1, 2, 3], [4, 5], 1) // [4, 1, 2, 3, 5].
-frankenSplice([1, 2], ['a', 'b'], 1) // ["a", 1, 2, "b"].
-frankenSplice(['claw', 'tentacle'], ['head', 'shoulders', 'knees', 'toes'], 2) // ["head", "shoulders", "claw", "tentacle", "knees", "toes"].
+frankenSplice([1, 2, 3], [4, 5], 1) // [4, 1, 2, 3, 5]
+frankenSplice([1, 2], ['a', 'b'], 1) // ['a', 1, 2, 'b']
+frankenSplice(['claw', 'tentacle'], ['head', 'shoulders', 'knees', 'toes'], 2) // ['head', 'shoulders', 'claw', 'tentacle', 'knees', 'toes']
