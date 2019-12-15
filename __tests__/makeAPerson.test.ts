@@ -19,6 +19,11 @@ describe('it should create a Person instance with methods to set and to retrieve
 		})
 	})
 
+	it('should produce instances of type Person', () => {
+		expect(bob).toBeInstanceOf(Person)
+		expect(alice).toBeInstanceOf(Person)
+	})
+
 	it('should have a method to get a person\'s first name', () => {
 		expect(bob.getFirstName).toBeTruthy()
 		expect(typeof bob.getFirstName).toBe('function')
