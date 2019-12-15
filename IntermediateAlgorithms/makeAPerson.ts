@@ -7,47 +7,47 @@
 // setFullName(firstAndLast)
 
 interface IPerson {
-    firstAndLast: string
-    getFirstName: () => string
-    getLastName: () => string
-    getFullName: () => string
-    setFirstName: (fn: string) => void
-    setLastName: (ln: string) => void
-    setFullName: (name: string) => void
+  firstAndLast: string;
+  getFirstName: () => string;
+  getLastName: () => string;
+  getFullName: () => string;
+  setFirstName: (fn: string) => void;
+  setLastName: (ln: string) => void;
+  setFullName: (name: string) => void;
 }
 
-class Person implements IPerson {
-    constructor(public firstAndLast: string) {
-        this.firstAndLast = firstAndLast
-    }
+export class Person implements IPerson {
+	constructor(public firstAndLast: string) {
+		this.firstAndLast = firstAndLast
+	}
 
-    getFirstName() {
-        const firstName = this.firstAndLast.split(' ')[1]
-        return firstName
-    }
+	getFirstName() {
+		const firstName = this.firstAndLast.split(' ')[0]
+		return firstName
+	}
 
-    setFirstName(fn: string) {
-        const names = this.firstAndLast.split(' ')
-        this.firstAndLast = `${fn} ${names[1]}`
-    }
+	setFirstName(fn: string) {
+		const names = this.firstAndLast.split(' ')
+		this.firstAndLast = `${fn} ${names[1]}`
+	}
 
-    getLastName() {
-        const lastName = this.firstAndLast.split(' ')[1]
-        return lastName
-    }
+	getLastName() {
+		const lastName = this.firstAndLast.split(' ')[1]
+		return lastName
+	}
 
-    setLastName(ln: string) {
-        const names = this.firstAndLast.split(' ')
-        this.firstAndLast = `${names[0]} ${ln}`
-    }
+	setLastName(ln: string) {
+		const names = this.firstAndLast.split(' ')
+		this.firstAndLast = `${names[0]} ${ln}`
+	}
 
-    getFullName() {
-        return this.firstAndLast
-    }
+	getFullName() {
+		return this.firstAndLast
+	}
 
-    setFullName(name: string) {
-        this.firstAndLast = name
-    }
+	setFullName(name: string) {
+		this.firstAndLast = name
+	}
 }
 
 const bob = new Person('Bob Ross')
