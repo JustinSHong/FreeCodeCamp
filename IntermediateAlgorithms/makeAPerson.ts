@@ -7,13 +7,13 @@
 // setFullName(firstAndLast)
 
 interface IPerson {
-    firstAndLast: string;
-    getFirstName: () => string;
-    getLastName: () => string;
-    getFullName: () => string;
-    setFirstName: (fn: string) => string;
-    setLastName: (ln: string) => string;
-    setFullName: (name: string) => string;
+    firstAndLast: string
+    getFirstName: () => string
+    getLastName: () => string
+    getFullName: () => string
+    setFirstName: (fn: string) => string
+    setLastName: (ln: string) => string
+    setFullName: (name: string) => string
 }
 
 class Person implements IPerson {
@@ -22,7 +22,7 @@ class Person implements IPerson {
     }
 
     getFirstName() {
-        const firstName = this.firstAndLast.split(' ')[0]
+        const firstName = this.firstAndLast.split(' ')[1]
         return firstName
     }
 
@@ -31,7 +31,8 @@ class Person implements IPerson {
     }
 
     getLastName() {
-        return ''
+        const lastName = this.firstAndLast.split(' ')[1]
+        return lastName
     }
 
     setLastName() {
