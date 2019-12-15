@@ -22,9 +22,9 @@ class Person implements IPerson {
     }
 
     getFirstName() {
-        return '';
+        const firstName = this.firstAndLast.split(' ')[0];
+        return firstName;
     }
-
 
     setFirstName() {
         return '';
