@@ -18,38 +18,36 @@ interface IPerson {
 
 class Person implements IPerson {
     constructor(public firstAndLast: string) {
-        this.firstAndLast = firstAndLast;
+        this.firstAndLast = firstAndLast
     }
 
     getFirstName() {
-        const firstName = this.firstAndLast.split(' ')[0];
-        return firstName;
+        const firstName = this.firstAndLast.split(' ')[0]
+        return firstName
     }
 
     setFirstName() {
-        return '';
+        return ''
     }
 
     getLastName() {
-        return '';
+        return ''
     }
 
     setLastName() {
-        return '';
+        return ''
     }
 
     getFullName() {
-        return this.firstAndLast;
+        return this.firstAndLast
     }
 
     setFullName() {
-        return '';
+        return ''
     }
-
 }
 
-
-const bob = new Person('Bob Ross');;
-bob.getFirstName(); // Bob
-bob.getLastName(); // Ross
-bob.getFullName(); // Bob Ross
+const bob = new Person('Bob Ross')
+bob.getFirstName() // Bob
+bob.getLastName() // Ross
+bob.getFullName() // Bob Ross
