@@ -11,7 +11,7 @@ interface IPerson {
     getFirstName: () => string
     getLastName: () => string
     getFullName: () => string
-    setFirstName: (fn: string) => string
+    setFirstName: (fn: string) => void
     setLastName: (ln: string) => string
     setFullName: (name: string) => void
 }
@@ -26,8 +26,9 @@ class Person implements IPerson {
         return firstName
     }
 
-    setFirstName() {
-        return ''
+    setFirstName(fn: string) {
+        const names = this.firstAndLast.split(' ')
+        this.firstAndLast = `${fn} ${names[1]}`
     }
 
     getLastName() {
