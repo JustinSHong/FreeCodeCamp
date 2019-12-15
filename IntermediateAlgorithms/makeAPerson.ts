@@ -54,3 +54,10 @@ const bob = new Person('Bob Ross')
 bob.getFirstName() // Bob
 bob.getLastName() // Ross
 bob.getFullName() // Bob Ross
+
+bob.setFullName('A B')
+bob.getFullName() // A B
+bob.setFirstName('BOB')
+bob.getFirstName() // BOB
+bob.setLastName('ROSS')
+bob.getLastName() // ROSS
