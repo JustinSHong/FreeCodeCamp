@@ -12,13 +12,24 @@ interface IDebrisAltitudes {
 
 interface IOrbitalPeriods {
     name: string
-    orbitalPeriod: number
+    orbitalPeriod: number // seconds
 }
 
 export const orbitalPeriod = (data: IDebrisAltitudes[]): IOrbitalPeriods[] => {
-    const GM = 398600.4418
-    const earthRadius = 6367.4447
-    return
+    const GM = 398600.4418 // standard gravitational parameter
+    const earthRadius = 6367.4447 // kilometers
+
+    const result = data.map(d => {
+        const orbital: IOrbitalPeriods = { name: '', orbitalPeriod: 0 }
+        let a = Math.pow(d.avgAlt + earthRadius, 3)
+
+        orbital.name = d.name
+        orbital.orbitalPeriod = Math.round(2 * Math.PI * Math.sqrt(a / GM)) // see Kepler's 3rd law
+
+        return orbital
+    })
+
+    return result
 }
 
 orbitalPeriod([{ name: 'sputnik', avgAlt: 35873.5553 }]) // [{name: "sputnik", orbitalPeriod: 86400}]
