@@ -16,6 +16,7 @@ interface IOrbitalPeriods {
 }
 
 export const orbitalPeriod = (data: IDebrisAltitudes[]): IOrbitalPeriods[] => {
+    // prettier-ignore
     const GM = 398600.4418 // standard gravitational parameter
     const earthRadius = 6367.4447 // kilometers
 
