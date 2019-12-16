@@ -58,5 +58,11 @@ describe('it should create a Person instance with methods to set and to retrieve
 		expect(alice.setFirstName).toBeTruthy()
 		expect(typeof alice.setFirstName).toBe('function')
 	})
-	it('should have a method to set a person\'s full name', () => {})
+
+	it('should have a method to set a person\'s full name', () => {
+		expect(bob.setFullName).toBeTruthy()
+		expect(typeof bob.setFullName).toBe('function')
+		expect(alice.setFullName).toBeTruthy()
+		expect(typeof alice.setFullName).toBe('function')
+	})
 })
