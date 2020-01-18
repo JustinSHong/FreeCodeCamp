@@ -20,7 +20,7 @@ describe('it should return an element\'s oribtal period', () => {
 		]
 	]
 
-	describe.each(testCases)('find oribtal periods', (a, b) => {
+	describe.each(testCases)('find oribital periods', (a, b) => {
 		it(`should take ${a} and return ${b}`, () => {
 			const result = orbitalPeriod(a as any)
 
