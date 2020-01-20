@@ -17,3 +17,8 @@ const fiboEvenSum = (n: number): number => {
 
 	return sum
 }
+
+fiboEvenSum(10) // 44
+fiboEvenSum(18) // 3382
+fiboEvenSum(23) // 60696
+fiboEvenSum(43) // 350704366
