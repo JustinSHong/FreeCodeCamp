@@ -2,7 +2,7 @@
 // The sum of these multiples is 23.
 // Find the sum of all the multiples of 3 or 5 below the provided parameter value number.
 
-const multiplesOf3and5 = (number: number): number => {
+export const multiplesOf3and5 = (number: number): number => {
 	let sum = 0
 	let current = 1
 	while (current < number) {
