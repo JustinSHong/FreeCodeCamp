@@ -2,8 +2,8 @@
 // By starting with 1 and 2, the first 10 terms will be: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 // By considering the terms in the Fibonacci sequence that do not exceed the nth term, find the sum of the even-valued terms.
 
-// iterative solution
-const fiboEvenSum = (n: number): number => {
+// iterative solution - bottom up approach
+const fiboEvenSumBottomUp = (n: number): number => {
 	const fibNums = [0, 1]
 	let sum = 0
 
@@ -18,7 +18,44 @@ const fiboEvenSum = (n: number): number => {
 	return sum
 }
 
-fiboEvenSum(10) // 44
-fiboEvenSum(18) // 3382
-fiboEvenSum(23) // 60696
-fiboEvenSum(43) // 350704366
+// top down solution
+const fiboEvenSumTopDown = (n: number): number => {
+	const initCache = (n: number) => {
+		const cache: any = {}
+		for (let i = 0; i <= n + 1; i++) {
+			cache[i] = null
+		}
+		return cache
+	}
+
+	const memo = initCache(n)
+	let sum = 0
+
+	const findEvenSum = (n: number): number => {
+		if (memo[n] === null) {
+			if (n <= 1) {
+				memo[n] = n
+			} else {
+				// current value is not in cache
+				memo[n] = findEvenSum(n - 1) + findEvenSum(n - 2)
+				if (memo[n] % 2 === 0) {
+					sum += memo[n]
+				}
+			}
+		}
+		return memo[n]
+	}
+
+	findEvenSum(n + 1)
+	return sum
+}
+
+fiboEvenSumBottomUp(10) // 44
+fiboEvenSumBottomUp(18) // 3382
+fiboEvenSumBottomUp(23) // 60696
+fiboEvenSumBottomUp(43) // 350704366
+
+fiboEvenSumTopDown(10) // 44
+fiboEvenSumTopDown(18) // 3382
+fiboEvenSumTopDown(23) // 60696
+fiboEvenSumTopDown(43) // 350704366
