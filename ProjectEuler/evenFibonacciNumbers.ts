@@ -50,6 +50,26 @@ const fiboEvenSumTopDown = (n: number): number => {
 	return sum
 }
 
+// space efficient solution
+const fiboEvenSumEfficientSpace = (n: number): number => {
+	let sum = 0
+	let a = 0,
+		b = 1,
+		c
+
+	for (let i = 2; i <= n + 1; i++) {
+		c = a + b
+		a = b
+		b = c
+
+		if (c % 2 === 0) {
+			sum += c
+		}
+	}
+
+	return sum
+}
+
 fiboEvenSumBottomUp(10) // 44
 fiboEvenSumBottomUp(18) // 3382
 fiboEvenSumBottomUp(23) // 60696
