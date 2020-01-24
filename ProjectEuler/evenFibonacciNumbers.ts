@@ -79,3 +79,8 @@ fiboEvenSumTopDown(10) // 44
 fiboEvenSumTopDown(18) // 3382
 fiboEvenSumTopDown(23) // 60696
 fiboEvenSumTopDown(43) // 350704366
+
+fiboEvenSumEfficientSpace(10) // 44
+fiboEvenSumEfficientSpace(18) // 3382
+fiboEvenSumEfficientSpace(23) // 60696
+fiboEvenSumEfficientSpace(43) // 350704366
